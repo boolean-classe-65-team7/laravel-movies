@@ -13,7 +13,7 @@
                         <p class="card-text">{{$movie["plot"]}}</p>
                         <p class="card-text">{{$movie["release_date"]}}</p>
                         <p class="card-text">{{$movie["genre"]}}</p>
-                        <a href="#" class="btn btn-primary">Trama intera</a>
+                        <a href="{{ route('movies.show', $movie->id) }}" class="btn btn-primary">Trama intera</a>
                     </div>
                 </div>
             </div>

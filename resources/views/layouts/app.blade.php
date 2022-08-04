@@ -43,7 +43,6 @@
             background: #212121;
             width: 100%
             border-right: 1px solid #e5e5e5;
-            height: 100%;
             overflow: hidden;
             -webkit-transition: width .05s linear;
             transition: width .05s linear;
