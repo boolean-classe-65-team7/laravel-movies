@@ -11,7 +11,7 @@
         </li>
 
         <li>
-            <a href="{{ route("movies.index")}}">
+            <a href="{{ route("admin.movies.index")}}">
                 <i class="fa fa-book fa-2x"></i>
                 <span class="nav-text">
                     Movies
