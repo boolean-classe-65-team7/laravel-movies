@@ -13,9 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name("home");
+// Route::get('/', function () {
+//     return view('index');
+// })->name("home");
 
-Route::get('/movies', 'MovieController@index')->name('movies.index');
-Route::get('/movies/{movie}', 'MovieController@show')->name('movies.show');
+
+
+
+Auth::routes();
+
+Route::middleware("auth")
+->namespace("Admin") //namespace =  indica la cartella dove si trovano i controller
+->name("admin.") //name =  Aggiunge prima del nome di ogni rotta questo prefisso
+->prefix("admin") //prefix =  Aggiunge prima di ogni URI questo prefisso
+->group(function () {
+    Route::get('/', 'HomeController@index')->name('index');    
+    Route::resource("movies" , "MovieController");
+    
+  });
+
+
+
+Route::get('/', 'HomeController@index')->name('home');
